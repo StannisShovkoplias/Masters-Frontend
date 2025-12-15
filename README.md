@@ -1,15 +1,48 @@
-# INT20H SigmaDevs Front-End Conventions
+# 🎨 AI Code Generator - Client Side
 
-## TypeScript
+Це клієнтська частина (Frontend) системи автоматизованої генерації коду. Застосунок побудований як **Single Page Application (SPA)**, що забезпечує реактивний та інтуїтивно зрозумілий інтерфейс для взаємодії користувача з генеративним штучним інтелектом.
 
--  Only named exports: `export { function }`.
--  React functional components (FC) should use function declarations: `function Component() {}`.
--  Hooks, functions, and objects should be defined as arrow functions: `const useHook = () => {}`.
--  Entity types should be defined in the store API section: `type User = { id: string; displayName?: string }`.
+Проєкт фокусується на продуктивності (Vite), типобезпеці (TypeScript) та сучасному UX (Radix UI + Tailwind CSS).
 
-## Styles
+## 🛠 Технологічний стек
 
--  Use colors from the Radix 12-step color convention: `color: var(--accent-10)`.
--  Use Tailwind for margin, padding, layouts, and responsiveness.
--  Use `clsx` for dynamic classNames `cn({ specialCard:true, hidden:!isAuthenticated() })`.
--  Use predefined HTML typography tags for typography styles: `h1, h2, h3, b, em, u, small`.
+Основні інструменти та бібліотеки, використані у розробці:
+
+* **Core:** React 18, TypeScript, Vite
+* **Routing:** React Router DOM v6
+* **State Management:** Redux Toolkit (global state), React Query (server state)
+* **Styling:** Tailwind CSS, PostCSS
+* **UI Components:** Radix UI Primitives, Lucide React (icons)
+* **Forms & Validation:** React Hook Form, Yup
+* **Network:** Axios (with interceptors)
+* **Feedback:** React Hot Toast
+
+## ✨ Ключові можливості
+
+* **⚡ Миттєвий старт:** Використання Vite забезпечує швидкий запуск dev-сервера та HMR (Hot Module Replacement).
+* **🔐 Авторизація:** Інтеграція з GitHub OAuth для безпечного входу.
+* **💬 Інтерактивний чат:** Зручний інтерфейс для введення промтів та перегляду результатів генерації.
+* **📱 Адаптивність:** Повністю адаптивний дизайн для роботи на десктопах та мобільних пристроях.
+* **🛡 Типізація:** Сувора перевірка типів TypeScript для мінімізації помилок під час виконання.
+
+## ⚙️ Попередні вимоги
+
+Переконайтеся, що у вас встановлено:
+
+* Node.js (версія 18.x або вище)
+* npm або yarn/pnpm
+
+## 🚀 Інструкція із запуску
+
+Клонування репозиторію
+
+```bash
+git clone [https://github.com/StannisShovkoplias/Masters-Frontend.git](https://github.com/StannisShovkoplias/Masters-Frontend.git)
+cd Masters-Frontend
+
+npm install
+
+# URL бекенд API
+VITE_API_URL=http://localhost:8080/api/v1
+
+npm run dev
